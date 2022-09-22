@@ -22,14 +22,17 @@ function onClickTeam() {
         .to('.slide_1 .element_3', { x: 150, opacity: 0 }, "<")
         .to('.slide_1 .element_4', { x: -150, opacity: 0 }, "<")
         .to(['.slide_2 .element_2'], { opacity: 1 }, "<.5")
-        .to(['.slide_2 .element_3'], { opacity: 1 }, "<");
+        .to(['.slide_2 .element_3'], { opacity: 1 }, "<")
+        .to(['.slide_2 .element_2'], {rotate:.7,repeat:-1,duration:2, yoyo:true}, ">")
+
     var t2 = gsap.timeline({ defaults: { ease: "power1.inOut" },repeat:-1 })
         // .to('.slide_2 .element_3',{opacity:0,delay:3})
-        .fromTo('.slide_2 .element_4',{opacity:0},{opacity:1,delay:3,duration:1})
+        .to('.slide_2 .element_4',{opacity:1,duration:1},">2.5")
+        .to('.slide_2 .element_3',{opacity:0,duration:1},">-1")
         .to('.slide_2 .element_5',{opacity:1,duration:1},">2.5")
-        .to('.slide_2 .element_4',{opacity:0,duration:1},"<.5")
+        .to('.slide_2 .element_4',{opacity:0,duration:1},">-1")
         .to('.slide_2 .element_3',{opacity:1,duration:1},">2.5")
-        .to('.slide_2 .element_5',{opacity:0,duration:1},"<.5")
+        .to('.slide_2 .element_5',{opacity:0,duration:1},">-1")
 
 
         // .to('.slide_2 .element_5',{opacity:1},)
